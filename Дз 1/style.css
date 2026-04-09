@@ -1,0 +1,63 @@
+.header {
+    background-color: #5b8c5a;
+    background-image: radial-gradient(circle, #43400f45 2px, transparent 3px);
+    background-size: 28px 28px;
+    padding: 32px 32px 30px 32px;
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+    text-align: center;
+    color: #2e2c1e;
+}
+
+header p {
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+nav {
+    background: #c7b386;
+    padding: 13px 32px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 19px;
+    color: #4a6741;
+    padding: 6px 13px;
+    border-radius: 50px;
+}
+
+nav a:hover {
+    background: #e6d5b8;
+    color: #2c4b2a;
+}
+
+.flower-section h2 {
+    font-size: 32px;
+    border-left: 8px solid #ffaa66;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    color: #3f6842;
+}
+
+.flower-section p {
+    margin-top: 10px;
+    font-size: 25px;
+    color: #2c4a2e;
+}
+
+.flower-section img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    background-color: #c7b386;
+    color: #2e2c1e;
+    text-align: center;
+    font-family: 'Brush Script MT', 'Brush Script Std', cursive;
+    padding: 20px;
+    font-size: 20px;
+}
