@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ebebeb;
+    font-family: Arial, sans-serif;
+    color: #1a1a1a;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+    background: #fafafa;
+}
+
+header {
+    padding: 30px 0 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+
+nav a {
+    font-size: 15px;
+    color: #666;
+    text-decoration: none;
+}
+
+.hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 60px 0 40px;
+}
+
+.name {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.info {
+    font-size: 18px;
+    color: #444;
+}
+
+.lang {
+    font-size: 14px;
+    color: #777;
+    writing-mode: vertical-rl;
+}
+
+.photo-wrapper {
+    margin-bottom: 80px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.photo-wrapper img {
+    display: block;
+    width: 100%;
+}
+
+h2 {
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.about-block {
+    max-width: 700px;
+    margin: 0 auto 120px;
+    text-align: center;
+    background: #f0f0f0;
+    padding: 45px 50px;
+    border-radius: 40px;
+}
+
+.about-block p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #2e2e2e;
+}
+
+.skills-block {
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+.skills-subtitle {
+    font-size: 22px;
+    margin-bottom: 50px;
+    color: #444;
+}
+
+.skills-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.skill-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.skill-row:last-child {
+    border-bottom: none;
+}
+
+.skill-row img {
+    height: 55px;
+    width: auto;
+}
+
+.skill-name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+}
+
+.stars {
+    font-size: 26px;
+    letter-spacing: 3px;
+    color: #e6a020;
+}
+
+.portfolio-block {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.work-example {
+    margin-bottom: 90px;
+}
+
+.work-example img {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.work-title {
+    font-size: 19px;
+    text-decoration: underline;
+    color: #1a1a1a;
+}
+
+footer {
+    text-align: center;
+    padding: 50px 0 60px;
+    border-top: 1px solid #ccc;
+}
+
+footer p {
+    font-size: 19px;
+    color: #333;
+    margin-bottom: 35px;
+}
+
+footer button {
+    background: #2a2a2a;
+    border: 1px solid #666;
+    color: #eee;
+    font-size: 18px;
+    padding: 14px 45px;
+    border-radius: 35px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.social-footer {
+    margin-top: 55px;
+    padding-top: 35px;
+    border-top: 1px solid #d0d0d0;
+}
+
+.social-footer p {
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 18px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.social-links a {
+    font-size: 17px;
+    color: #3a3a3a;
+    text-decoration: none;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 2px;
+}
