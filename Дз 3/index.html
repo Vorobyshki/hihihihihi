@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="/IMAGE 2569-04-23 20:08:36.jpg" alt="Background" class="bg-image">
+
+    <div class="container">
+        <h1>to-do list</h1>
+
+        <div class="top-bar">
+            <div class="add-section">
+                <input type="text" id="taskInput" placeholder="New task">
+                <select id="prioritySelect">
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <button class="add-btn" id="addTaskBtn">Add</button>
+            </div>
+
+            <div class="search-section">
+                <input type="text" id="searchInput" placeholder="🔍 Search task...">
+            </div>
+
+            <div class="filter-section">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
