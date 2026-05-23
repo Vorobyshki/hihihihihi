@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Система заявок на обучение</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CRM Система заявок на обучение</h1>
+
+        <div class="controls-panel">
+            <div class="search-section">
+                <label class="search-label">Поиск по имени клиента</label>
+                <input type="text" id="searchInput" placeholder="Введите имя..." autocomplete="off">
+            </div>
+
+            <div class="filters-row">
+                <div class="filter-group">
+                    <label>Фильтр по курсу</label>
+                    <select id="courseFilter">
+                        <option value="all">Все курсы</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="AI">AI</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Сортировка</label>
+                    <div class="sort-btn-group">
+                        <button id="sortNameBtn" class="sort-btn">По имени (А-Я)</button>
+                        <button id="sortBudgetBtn" class="sort-btn">По бюджету</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <span>Найдено заявок: <strong id="leadsCount">0</strong></span>
+        </div>
+
+        <div id="cardsContainer" class="cards-grid"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
