@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Менеджер задач</title>
+  <style>
+    body { font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; }
+    .input-row { display: flex; gap: 8px; margin-bottom: 20px; }
+    input { flex: 1; padding: 8px; font-size: 16px; }
+    button { padding: 8px 16px; cursor: pointer; }
+    .task {
+      padding: 12px; border: 1px solid #ddd; border-radius: 6px;
+      margin-bottom: 8px; display: flex; align-items: center; gap: 12px;
+    }
+    .task.done { opacity: 0.5; text-decoration: line-through; }
+    .task-text { flex: 1; cursor: pointer; }
+    .stats { padding: 10px; background: #f0f0f0; border-radius: 6px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Менеджер задач</h1>
+ 
+  <div class="input-row">
+    <input type="text" id="taskInput" placeholder="Что нужно сделать?">
+    <button id="addBtn">Добавить</button>
+  </div>
+ 
+  <div class="stats" id="stats"></div>
+  <div id="tasksList"></div>
+ 
+  <script>
+function createTaskManager() {
+  let tasks = [];
+  let nextId = 1;
+
+  return {
+    addTask(text) {
+      const trimmedText = text.trim();
+      if (trimmedText === '') return false;
+      
+      tasks.push({
+        id: nextId++,
+        text: trimmedText,
+        done: false
+      });
+      return true;
+    },
+
+    toggleTask(id) {
+      const task = tasks.find(t => t.id === id);
+      if (task) {
+        task.done = !task.done;
+      }
+    },
+
+    deleteTask(id) {
+      tasks = tasks.filter(t => t.id !== id);
+    },
+
+    getAll() {
+      return [...tasks]; 
+    },
+
+    getStats() {
+      const total = tasks.length;
+      const completed = tasks.filter(t => t.done).length;
+      const active = total - completed;
+      return { total, active, completed };
+    }
+  };
+}
+
+const app = {
+  manager: createTaskManager(),
+
+  init() {
+    this.addBtn = document.getElementById('addBtn');
+    this.taskInput = document.getElementById('taskInput');
+    this.tasksList = document.getElementById('tasksList');
+    this.statsDiv = document.getElementById('stats');
+
+    this.addBtn.addEventListener('click', () => {
+      this.addTaskHandler();
+    });
+
+    this.taskInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        this.addTaskHandler();
+      }
+    });
+
+    this.render();
+  },
+
+  addTaskHandler() {
+    const text = this.taskInput.value;
+ 
+    if (!text.trim()) return;
+
+    this.manager.addTask(text);
+    this.taskInput.value = ''; 
+    this.render();
+  },
+
+  renderTask(task) {
+    const taskDiv = document.createElement('div');
+    taskDiv.className = 'task';
+    if (task.done) taskDiv.classList.add('done');
+ 
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.checked = task.done;
+    checkbox.addEventListener('change', () => {
+      this.manager.toggleTask(task.id);
+      this.render();
+    });
+   
+    const textSpan = document.createElement('span');
+    textSpan.className = 'task-text';
+    textSpan.textContent = task.text;
+   
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = '×';
+    deleteBtn.addEventListener('click', () => {
+      this.manager.deleteTask(task.id);
+      this.render();
+    });
+    
+    taskDiv.appendChild(checkbox);
+    taskDiv.appendChild(textSpan);
+    taskDiv.appendChild(deleteBtn);
+    
+    return taskDiv;
+  },
+
+  renderStats() {
+    const stats = this.manager.getStats();
+    this.statsDiv.innerHTML = `
+      Всего: ${stats.total} | 
+      Выполнено: ${stats.completed} | 
+      Активных: ${stats.active}
+    `;
+  },
+
+  render() {
+    this.tasksList.innerHTML = '';
+
+    const tasks = this.manager.getAll();
+    tasks.forEach(task => {
+      const taskElement = this.renderTask(task);
+      this.tasksList.appendChild(taskElement);
+    });
+
+    this.renderStats();
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  app.init();
+});
+  </script>
+</body>
+</html>
