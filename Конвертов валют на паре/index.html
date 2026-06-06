@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер валют</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="converter">
+        <h1>Конвертер валют</h1>
+        <div class="field">
+            <label for="amount-a">Сумма</label>
+            <input id="amount-a" type="number" inputmode="decimal" step="0.01" min="0" value="1">
+        </div>
+        <div class="field">
+            <label for="currency-a">Из валюты</label>
+            <select id="currency-a">
+                <option value="USD">USD - Доллар США</option>
+                <option value="EUR">EUR - Евро</option>
+                <option value="RUB">RUB - Российский рубль</option>
+                <option value="GBP">GBP - Фунт стерлингов</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="amount-b">Результат</label>
+            <input id="amount-b" type="number" inputmode="decimal" step="0.01" min="0" value="0" readonly>
+        </div>
+        <div class="field">
+            <label for="currency-b">В валюту</label>
+            <select id="currency-b">
+                <option value="RUB">RUB - Российский рубль</option>
+                <option value="USD">USD - Доллар США</option>
+                <option value="EUR">EUR - Евро</option>
+                <option value="GBP">GBP - Фунт стерлингов</option>
+            </select>
+        </div>
+        <p id="status" class="status">Ожидание ввода...</p>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>
